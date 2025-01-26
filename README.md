@@ -25,20 +25,21 @@ This code represents a React application for the game **Tenzies**, where players
     }
     return diceRoll;
   }
-#### 3. **Dynamic Rendering with Conditional Logic**
+### 3. Dynamic Rendering with Conditional Logic
 - Dynamically renders dice components using the `map()` method, ensuring each die is created based on the current state.
 - Displays a confetti animation (`react-confetti`) when the game is won.
 
-- **Example**:
+#### Example:
 ```javascript
-{
-gameWon && <Confetti />
-}
-#### 4. **Interactive Dice with Prop Passing**
+{gameWon && <Confetti />}
+
+
+
+### 4. Interactive Dice with Prop Passing
 - The `Die` components are highly interactive and receive essential props, such as `value`, `isHeld`, and `hold`, to handle their functionality dynamically.
 - Each die can independently display its value, track its state (held or not), and trigger actions like toggling the hold state.
 
-- **Example**:
+#### Example:
 ```javascript
 <Die
   key={die.id}
@@ -47,12 +48,14 @@ gameWon && <Confetti />
   isHeld={die.isHeld}
   hold={hold}
 />
-#### 5. Game Logic
+
+
+### 5. Game Logic
 - Implements logic to roll dice:
   - If the game is won, resets all dice to new random values using `generateAllNewDice()`.
   - If the game is ongoing, updates only non-held dice with new random values, preserving the state of held dice.
 
-- **Example**:
+#### Example:
 ```javascript
 function rollDice() {
   gameWon
