@@ -25,19 +25,20 @@ This code represents a React application for the game **Tenzies**, where players
     }
     return diceRoll;
   }
-#### 3. Dynamic Rendering with Conditional Logic
+#### 3. **Dynamic Rendering with Conditional Logic**
 - Dynamically renders dice components using the `map()` method, ensuring each die is created based on the current state.
 - Displays a confetti animation (`react-confetti`) when the game is won.
 
-#### Example:
+- **Example**:
 ```javascript
-{gameWon && <Confetti />}
-
-#### 4. Interactive Dice with Prop Passing
+{
+gameWon && <Confetti />
+}
+#### 4. **Interactive Dice with Prop Passing**
 - The `Die` components are highly interactive and receive essential props, such as `value`, `isHeld`, and `hold`, to handle their functionality dynamically.
 - Each die can independently display its value, track its state (held or not), and trigger actions like toggling the hold state.
 
-#### Example:
+- **Example**:
 ```javascript
 <Die
   key={die.id}
@@ -51,7 +52,7 @@ This code represents a React application for the game **Tenzies**, where players
   - If the game is won, resets all dice to new random values using `generateAllNewDice()`.
   - If the game is ongoing, updates only non-held dice with new random values, preserving the state of held dice.
 
-#### Example:
+- **Example**:
 ```javascript
 function rollDice() {
   gameWon
@@ -67,7 +68,7 @@ function rollDice() {
   1. All dice share the same value.
   2. All dice are held.
 
-#### Example:
+- **Example**:
 ```javascript
 const gameWon =
   dice.every((die) => die.value === dice[0].value) &&
@@ -76,7 +77,7 @@ const gameWon =
 - Utilizes the `useEffect` hook to trigger side effects in response to changes in the `gameWon` state.
 - Automatically focuses the "New Game" button when the game is won, enhancing user experience.
 
-#### Example:
+- **Example**:
 ```javascript
 React.useEffect(() => {
   if (gameWon) {
@@ -87,7 +88,7 @@ React.useEffect(() => {
 - Employs the `useRef` hook to create a reference to the "New Game" button, enabling direct manipulation of the DOM element.
 - Facilitates smooth and intuitive interactions, such as focusing on the button when the game is won.
 
-#### Example:
+- **Example**:
 ```javascript
 const buttonRef = React.useRef(null);
 
